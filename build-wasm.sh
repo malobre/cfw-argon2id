@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-EMCC_COMMON_FLAGS="-O3 --no-entry -sWASM=1 lib/wasm.c -sIMPORTED_MEMORY=1 -sALLOW_MEMORY_GROWTH=1 -sMAXIMUM_MEMORY=4gb -sINITIAL_MEMORY=65mb"
+# Warning: MB refers to MiB
+EMCC_COMMON_FLAGS="-O3 --no-entry -sWASM=1 lib/wasm.c -sIMPORTED_MEMORY=1 -sALLOW_MEMORY_GROWTH=1 -sMAXIMUM_MEMORY=46MB -sINITIAL_MEMORY=7MB"
 
 DOCKER_OPTIONS="docker run --rm \
   -v $(pwd):/src \
