@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "test": "mocha --loader=ts-node/esm test/blake2b.spec.js test/argon2id.spec.ts",
-    "lint": "eslint index.js lib test",
+    "lint": "biome check index.js lib test",
     "build": "rm -rf dist && mkdir dist && ./build-wasm.sh",
     "test-browser": "karma start karma.config.cjs",
     "preversion": "npm run build && npm test"
@@ -31,11 +31,7 @@
     "@biomejs/biome": "^1.3.3",
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
     "chai": "^4.3.7",
-    "eslint": "^8.32.0",
-    "eslint-plugin-import": "^2.27.5",
     "karma": "^6.4.1",
     "karma-browserstack-launcher": "^1.6.0",
     "karma-chrome-launcher": "^3.1.1",
