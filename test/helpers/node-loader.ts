@@ -1,8 +1,8 @@
-import { readFileSync } from 'fs';
-import setupWasm from '../../lib/setup.js';
+import { readFileSync } from "fs";
+import setupWasm from "../../lib/setup.js";
 
-const SIMD_FILENAME = './dist/simd.wasm';
-const NON_SIMD_FILENAME = './dist/no-simd.wasm';
+const SIMD_FILENAME = "./dist/simd.wasm";
+const NON_SIMD_FILENAME = "./dist/no-simd.wasm";
 
 /**
  * Simple wasm loader for Node, that does not require bundlers:
@@ -11,8 +11,9 @@ const NON_SIMD_FILENAME = './dist/no-simd.wasm';
  */
 export default async function load() {
   return setupWasm(
-    (importObject) => WebAssembly.instantiate(readFileSync(SIMD_FILENAME), importObject),
-    (importObject) => WebAssembly.instantiate(readFileSync(NON_SIMD_FILENAME), importObject),
+    (importObject) =>
+      WebAssembly.instantiate(readFileSync(SIMD_FILENAME), importObject),
+    (importObject) =>
+      WebAssembly.instantiate(readFileSync(NON_SIMD_FILENAME), importObject),
   );
 }
-

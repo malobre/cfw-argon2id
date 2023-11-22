@@ -20,7 +20,9 @@ export type computeHash = typeof argon2id;
 
 type MaybePromise<T> = T | Promise<T>;
 
-declare function customInstanceLoader(importObject: WebAssembly.Imports): MaybePromise<WebAssembly.WebAssemblyInstantiatedSource>;
+declare function customInstanceLoader(
+  importObject: WebAssembly.Imports,
+): MaybePromise<WebAssembly.WebAssemblyInstantiatedSource>;
 
 /**
  * Load Wasm module and return argon2id wrapper.
